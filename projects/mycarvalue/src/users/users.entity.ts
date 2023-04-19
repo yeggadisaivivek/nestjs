@@ -1,5 +1,5 @@
 import { Exclude } from 'class-transformer';
-import { Report } from 'src/reports/reports.entity';
+import { Report } from '../reports/reports.entity';
 import {
   AfterInsert,
   Column,
@@ -26,4 +26,7 @@ export class User {
   logInsert() {
     console.log('Inserted id in table ', this.id);
   }
+
+  @Column({ default: true })
+  admin: boolean;
 }
